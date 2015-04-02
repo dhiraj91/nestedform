@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+<div>
+  <%= f.label :fullname %><br />
+  <%= f.text_field :fullname %>
+</div>
+<div>
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+</div>
+<div>
+  <%= f.label :contactno %><br />
+  <%= f.text_field :contact_no %>
+</div>
+<div>
+  <%= f.label :address %><br />
+  <%= f.text_field :address %>
+</div>
+<div><br />
+<%= f.select(:test_id, Test.all.collect {|p| [p.name, p.id ]}, { :include_blank => 'select test' }) %></div><br />
+<div>
+ <%= f.submit %>
+</div>
+<% end %>
